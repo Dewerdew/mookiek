@@ -18,9 +18,9 @@ const outfit = Outfit({
 
 /* ── SEO metadata ─────────────────────────────────────────── */
 export const metadata = {
-  title: "Mook — Marketing Operations & Data Analysis Portfolio",
+  title: "Portfolio — Creative Professional",
   description:
-    "Portfolio of a Marketing Operations & Data Analysis Hybrid. Case studies in reward optimization, tier design, and notification strategy.",
+    "Personal portfolio showcasing services, projects, and skills. Dark themed with modern design.",
 };
 
 /* ── Root Layout ──────────────────────────────────────────── */
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col font-sans">
+      <body className="flex min-h-full flex-col font-sans bg-background text-foreground">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -21,7 +21,7 @@ export default function SectionWrapper({ id, children, className = "" }) {
           observer.unobserve(el); // animate only once
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
 
     observer.observe(el);
@@ -32,7 +32,7 @@ export default function SectionWrapper({ id, children, className = "" }) {
     <section
       id={id}
       ref={ref}
-      className={`fade-section mx-auto w-full max-w-5xl px-5 py-16 md:py-24 ${className}`}
+      className={`fade-section mx-auto w-full max-w-6xl px-5 py-16 md:py-24 ${className}`}
     >
       {children}
     </section>

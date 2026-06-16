@@ -1,19 +1,22 @@
 import { personalInfo } from "@/data/portfolio";
 
 /**
- * Footer — Simple copyright line at the bottom of the page.
+ * Footer — Dark themed footer with gradient accent line.
  */
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-white">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-5 py-6 text-xs text-muted sm:flex-row">
+    <footer className="border-t border-border bg-background-secondary">
+      {/* Top accent line */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+      
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 py-8 text-xs text-muted sm:flex-row">
         <span>
-          © {year} {personalInfo.name} — Marketing × Data Portfolio
+          © {year} {personalInfo.name} — All rights reserved.
         </span>
-        <span>
-          Built as a hybrid profile: marketing operations + analysis + communication.
+        <span className="text-muted/60">
+          Designed with ♥
         </span>
       </div>
     </footer>

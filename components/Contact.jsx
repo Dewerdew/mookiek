@@ -1,28 +1,28 @@
-import { Mail, Linkedin, Download } from "lucide-react";
+import { Mail, Linkedin, Download, Send } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
-import { socialLinks } from "@/data/portfolio";
+import { socialLinks, contactSection, personalInfo } from "@/data/portfolio";
 
 /**
- * Contact — Simple recruiter-friendly contact block.
- * No form in v1 — just email, LinkedIn, and resume download.
+ * Contact — Dark themed contact section with action buttons.
  */
 export default function Contact() {
   return (
     <SectionWrapper id="contact">
-      <div className="mx-auto max-w-xl text-center">
+      <div className="mx-auto max-w-2xl text-center">
+        {/* Heading */}
         <h2 className="font-heading text-3xl font-bold text-foreground md:text-4xl">
-          Let&apos;s Connect
+          {contactSection.title}
         </h2>
-        <p className="mt-3 text-base text-muted">
-          Open to marketing operations and analyst roles — feel free to reach out.
+        <p className="mt-4 text-base text-muted">
+          {contactSection.subtitle}
         </p>
 
         {/* Action buttons */}
-        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           {/* Email */}
           <a
             href={`mailto:${socialLinks.email}`}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-foreground/15 bg-white px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-all hover:border-accent hover:text-accent hover:shadow-md sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground shadow-sm transition-all hover:border-accent hover:text-accent hover:shadow-lg hover:shadow-accent/10 sm:w-auto"
           >
             <Mail size={16} />
             Email Me
@@ -33,7 +33,7 @@ export default function Contact() {
             href={socialLinks.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-foreground/15 bg-white px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-all hover:border-accent hover:text-accent hover:shadow-md sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground shadow-sm transition-all hover:border-accent hover:text-accent hover:shadow-lg hover:shadow-accent/10 sm:w-auto"
           >
             <Linkedin size={16} />
             LinkedIn
@@ -41,14 +41,17 @@ export default function Contact() {
 
           {/* Download Resume */}
           <a
-            href={socialLinks.resumeUrl}
+            href={personalInfo.resumeUrl}
             download
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-accent/90 hover:shadow-lg sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent-light hover:shadow-accent/40 hover:scale-105 sm:w-auto"
           >
             <Download size={16} />
             Download Resume
           </a>
         </div>
+
+        {/* Decorative accent line */}
+        <div className="mx-auto mt-12 h-px w-32 bg-gradient-to-r from-transparent via-accent to-transparent" />
       </div>
     </SectionWrapper>
   );

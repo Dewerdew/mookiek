@@ -1,27 +1,104 @@
 // ============================================================
 // portfolio.js — Single source of truth for all portfolio content.
-// Edit this file to update text, projects, skills, and links.
+// แก้ไขข้อมูลในไฟล์นี้ไฟล์เดียว เพื่ออัปเดตเนื้อหาทั้งเว็บ
 // ============================================================
 
+// ============================================================
+// PERSONAL INFO — ข้อมูลส่วนตัวที่แสดงใน Hero Section
+// ============================================================
 export const personalInfo = {
-  name: "Mook",
-  headline: "Marketing Operations & Data Analysis Hybrid",
-  subtitle:
-    "I turn user feedback, campaign data, and operational insights into clearer decisions, better reward experiences, and more effective communication.",
-  body: "I work at the intersection of marketing operations and analysis, using feedback, stock logs, cost data, and simple models to improve reward programs and panel communication. My goal is to make decisions that are fair for users and practical for the business.",
-  resumeUrl: "/resume.pdf", // Place your resume in /public/resume.pdf
+  greeting: "Hi I am",              // ← ข้อความทักทาย
+  name: "Your Name",                // ← ใส่ชื่อของคุณ
+  role: "Your Role / Title",        // ← ใส่ตำแหน่ง เช่น "UI/UX Designer", "Marketing Specialist"
+  resumeUrl: "/resume.pdf",         // ← วางไฟล์ resume ใน public/ folder
+  profileImage: "",                 // ← ใส่ path รูปโปรไฟล์ เช่น "/profile.jpg" (วางใน public/)
 };
 
-// Compact credibility highlights shown below the Hero
-export const credibilityHighlights = [
-  "User Feedback & Campaign Data",
-  "Stock Logs & Cost Analysis",
-  "Bilingual: Thai / English",
-  "Open to Marketing Ops & Analyst Roles",
+// ============================================================
+// HERO STATS — ตัวเลขที่แสดงด้านล่าง Hero
+// ============================================================
+export const heroStats = [
+  { value: "5+", label: "Experiences" },     // ← แก้ตัวเลข/label ตามต้องการ
+  { value: "20+", label: "Project done" },
+  { value: "80+", label: "Happy Clients" },
+];
+
+// ============================================================
+// SOCIAL LINKS — ลิงก์ social media (แสดงเป็น icon ใน Hero)
+// ============================================================
+export const socialLinks = {
+  email: "your.email@example.com",                // ← ใส่ email จริง
+  linkedin: "https://linkedin.com/in/your-profile", // ← ใส่ LinkedIn URL
+  github: "https://github.com/your-profile",        // ← ใส่ GitHub URL (ลบออกได้ถ้าไม่มี)
+  behance: "https://behance.net/your-profile",       // ← ใส่ Behance URL (ลบออกได้ถ้าไม่มี)
+  instagram: "https://instagram.com/your-profile",   // ← ใส่ Instagram URL (ลบออกได้ถ้าไม่มี)
+  resumeUrl: "/resume.pdf",
+};
+
+// ============================================================
+// SERVICES — บริการที่ต้องการแสดง (แสดงเป็น grid 3 columns × 2 rows)
+// เพิ่ม/ลบ item ได้ตามต้องการ
+// ============================================================
+export const services = [
+  {
+    title: "Service Title 1",                    // ← ใส่ชื่อบริการ
+    description: "Brief description of what this service includes and the value it provides to clients.", // ← ใส่รายละเอียด
+  },
+  {
+    title: "Service Title 2",
+    description: "Brief description of what this service includes and the value it provides to clients.",
+  },
+  {
+    title: "Service Title 3",
+    description: "Brief description of what this service includes and the value it provides to clients.",
+  },
+  {
+    title: "Service Title 4",
+    description: "Brief description of what this service includes and the value it provides to clients.",
+  },
+  {
+    title: "Service Title 5",
+    description: "Brief description of what this service includes and the value it provides to clients.",
+  },
+  {
+    title: "Service Title 6",
+    description: "Brief description of what this service includes and the value it provides to clients.",
+  },
+];
+
+// ============================================================
+// SERVICES SECTION TEXT
+// ============================================================
+export const servicesSection = {
+  title: "Services",                    // ← หัวข้อ section
+  subtitle: "Brief description of the services you offer and your approach to delivering value.", // ← คำอธิบาย section
+};
+
+// ============================================================
+// ABOUT ME — ข้อมูลเกี่ยวกับตัวคุณ (หน้า About)
+// ============================================================
+export const aboutMe = {
+  title: "About Me",                    // ← หัวข้อ section
+  subtitle: "Your specialty or tagline here",  // ← subtitle ใต้ชื่อ
+  bio: "Write your detailed biography here. Describe your background, experience, passion, and what drives you in your career. This section should give visitors a comprehensive understanding of who you are and what you bring to the table.\n\nYou can include multiple paragraphs to tell your story effectively. Share your journey, achievements, and professional philosophy.", // ← ใส่ประวัติ (แยก paragraph ด้วย \\n\\n)
+  profileImage: "",                     // ← ใส่รูป About เช่น "/about-photo.jpg" (วางใน public/)
+};
+
+// ============================================================
+// ABOUT SKILLS — ทักษะที่แสดงเป็น circular progress bars
+// percentage: 0-100
+// ============================================================
+export const aboutSkills = [
+  { name: "Skill 1", percentage: 90 },    // ← ใส่ชื่อ + เปอร์เซ็นต์
+  { name: "Skill 2", percentage: 85 },
+  { name: "Skill 3", percentage: 80 },
+  { name: "Skill 4", percentage: 75 },
+  { name: "Skill 5", percentage: 70 },
 ];
 
 // ============================================================
 // PROJECTS — 3 case studies with Problem / Analysis / Recommendation / Outcome
+// (ข้อมูลเดิมจาก portfolio เดิม)
 // ============================================================
 export const projects = [
   {
@@ -84,45 +161,17 @@ export const projects = [
 ];
 
 // ============================================================
-// SKILLS — grouped into 3 categories
+// PORTFOLIO SECTION TEXT
 // ============================================================
-export const skillCategories = [
-  {
-    title: "Marketing Operations",
-    skills: [
-      "Reward & incentive design",
-      "Panel management",
-      "Activity & campaign planning",
-      "Bilingual communication (EN/TH)",
-      "Client & user-facing copy",
-    ],
-  },
-  {
-    title: "Analysis & Reporting",
-    skills: [
-      "Excel (pivot, formulas, Power Query)",
-      "Stock & cost tracking",
-      "Survey analysis",
-      "Cost modeling",
-      "User feedback analysis",
-    ],
-  },
-  {
-    title: "Tools",
-    skills: [
-      "Google Workspace",
-      "Survey platforms",
-      "Slack / Teams",
-      "Basic data visualization",
-    ],
-  },
-];
+export const portfolioSection = {
+  title: "Portfolio",                          // ← หัวข้อ section
+  subtitle: "Selected case studies from real-world projects", // ← คำอธิบาย section
+};
 
 // ============================================================
-// SOCIAL / CONTACT LINKS
+// CONTACT SECTION TEXT
 // ============================================================
-export const socialLinks = {
-  email: "your.email@example.com",       // Replace with real email
-  linkedin: "https://linkedin.com/in/your-profile", // Replace with real URL
-  resumeUrl: "/resume.pdf",              // Same as personalInfo.resumeUrl
+export const contactSection = {
+  title: "Contact Me",                          // ← หัวข้อ section
+  subtitle: "Feel free to reach out — I'm open to new opportunities and collaborations.", // ← คำอธิบาย
 };

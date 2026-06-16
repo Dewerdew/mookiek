@@ -1,20 +1,20 @@
 import Hero from "@/components/Hero";
-import CredibilityStrip from "@/components/CredibilityStrip";
+import Services from "@/components/Services";
+import AboutMe from "@/components/AboutMe";
 import SelectedProjects from "@/components/SelectedProjects";
-import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 
 /**
- * Home page — Single-page portfolio layout.
- * Sections: Hero → Credibility Strip → Projects → Skills → Contact
+ * Home page — Dark themed single-page portfolio layout.
+ * Sections: Hero → Services → About Me → Portfolio → Contact
  */
 export default function Home() {
   return (
     <>
       <Hero />
-      <CredibilityStrip />
+      <Services />
+      <AboutMe />
       <SelectedProjects />
-      <Skills />
       <Contact />
     </>
   );
