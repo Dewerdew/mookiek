@@ -11,7 +11,7 @@ export const personalInfo = {
   name: "Orntharisa Kajornpongpaisan",
   role: "Data & Marketing Operations",
   resumeUrl: "/Resume - Orntharisa Kajornpongpaisan.pdf",
-  profileImage: "",                 // ← ใส่ path รูปโปรไฟล์ เช่น "/profile.jpg" (วางใน public/)
+  profileImage: "/mook.png",                 // ← ใส่ path รูปโปรไฟล์ เช่น "/profile.jpg" (วางใน public/)
 };
 
 // ============================================================
@@ -81,7 +81,7 @@ export const aboutMe = {
   title: "About Me",
   subtitle: "Data Analysis & Marketing Operations Specialist",
   bio: "I'm a data-driven marketing operations professional with 4+ years of experience at the intersection of analytics, coordination, and strategic planning. I specialize in turning operational data, customer feedback, and survey insights into clear, actionable recommendations that drive business growth.\n\nCurrently working as an Administration & Coordinator in the Marketing Division at GMO-Z.com NetDesign, I plan and coordinate marketing activities from concept to launch, analyze customer feedback to improve point exchange systems, and consolidate survey data to identify pain points. I bridge the gap between marketing and technical teams, translating insights into practical solutions.\n\nPreviously at Haupcar Co., Ltd., I managed vehicle operations, resolved system issues, and improved key management processes. I hold a Bachelor of Business Administration in Airline Business from Suan Sunandha Rajabhat University's International College.\n\nI'm seeking to transition into a specialized data and analytics role, contributing to insight-driven decision-making and operational efficiency.",
-  profileImage: "",                     // ← ใส่รูป About เช่น "/about-photo.jpg" (วางใน public/)
+  profileImage: "/mook.png",                     // ← ใส่รูป About เช่น "/about-photo.jpg" (วางใน public/)
 };
 
 // ============================================================

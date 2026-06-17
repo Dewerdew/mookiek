@@ -78,25 +78,31 @@ export default function AboutMe() {
 
       {/* 2-column layout: photo + bio */}
       <div className="mt-12 flex flex-col items-center gap-10 md:flex-row md:gap-16">
-        {/* Left — Profile photo */}
+        {/* Left — Profile photo (transparent PNG friendly) */}
         <div className="flex-shrink-0">
-          <div className="relative h-72 w-64 overflow-hidden rounded-2xl border border-border bg-card md:h-96 md:w-80">
+          <div className="relative h-72 w-64 md:h-[28rem] md:w-80">
             {aboutMe.profileImage ? (
-              <img
-                src={aboutMe.profileImage}
-                alt="About me"
-                className="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-              />
+              <>
+                {/* Glow behind */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-2/3 w-2/3 rounded-full bg-accent/15 blur-3xl" />
+                <img
+                  src={aboutMe.profileImage}
+                  alt="About me"
+                  className="relative z-10 h-full w-full object-contain object-bottom drop-shadow-[0_0_30px_rgba(168,85,247,0.1)] grayscale hover:grayscale-0 transition-all duration-500"
+                />
+                {/* Bottom gradient fade */}
+                <div className="absolute bottom-0 left-0 right-0 z-20 h-12 bg-gradient-to-t from-background to-transparent" />
+                {/* Accent line */}
+                <div className="absolute bottom-0 left-1/4 right-1/4 z-30 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent" />
+              </>
             ) : (
-              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-card to-background">
+              <div className="flex h-full w-full items-center justify-center rounded-2xl border border-border bg-card/50">
                 <div className="text-center">
                   <div className="text-5xl text-accent/30">📷</div>
                   <p className="mt-2 text-xs text-muted/50">Add your photo</p>
                 </div>
               </div>
             )}
-            {/* Accent border decoration */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent-light" />
           </div>
         </div>
 
