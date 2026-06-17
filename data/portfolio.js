@@ -10,7 +10,7 @@ export const personalInfo = {
   greeting: "Hi I am",              // ← ข้อความทักทาย
   name: "Your Name",                // ← ใส่ชื่อของคุณ
   role: "Your Role / Title",        // ← ใส่ตำแหน่ง เช่น "UI/UX Designer", "Marketing Specialist"
-  resumeUrl: "/resume.pdf",         // ← วางไฟล์ resume ใน public/ folder
+  resumeUrl: "/Resume - Orntharisa Kajornpongpaisan.pdf",         // ← วางไฟล์ resume ใน public/ folder
   profileImage: "",                 // ← ใส่ path รูปโปรไฟล์ เช่น "/profile.jpg" (วางใน public/)
 };
 
@@ -32,7 +32,7 @@ export const socialLinks = {
   github: "https://github.com/your-profile",        // ← ใส่ GitHub URL (ลบออกได้ถ้าไม่มี)
   behance: "https://behance.net/your-profile",       // ← ใส่ Behance URL (ลบออกได้ถ้าไม่มี)
   instagram: "https://instagram.com/your-profile",   // ← ใส่ Instagram URL (ลบออกได้ถ้าไม่มี)
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/Resume - Orntharisa Kajornpongpaisan.pdf",
 };
 
 // ============================================================
