@@ -1,72 +1,43 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Download } from "lucide-react";
+import {
+  Download,
+  BarChart3,
+  Sheet,
+  ClipboardList,
+  Calculator,
+  Megaphone,
+  Settings,
+  ListChecks,
+  ShieldCheck,
+  Users,
+  MessageSquare,
+  Globe,
+} from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import { aboutMe, aboutSkills, personalInfo } from "@/data/portfolio";
 
-/**
- * CircularProgress — SVG-based circular progress bar with animation.
- */
-function CircularProgress({ percentage, name, isVisible }) {
-  const radius = 40;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (percentage / 100) * circumference;
-
-  return (
-    <div className="flex flex-col items-center gap-3">
-      {/* SVG Circle */}
-      <div className="relative h-24 w-24 md:h-28 md:w-28">
-        <svg className="h-full w-full -rotate-90" viewBox="0 0 100 100">
-          {/* Background circle */}
-          <circle
-            cx="50"
-            cy="50"
-            r={radius}
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="4"
-            className="text-border"
-          />
-          {/* Progress circle */}
-          <circle
-            cx="50"
-            cy="50"
-            r={radius}
-            fill="none"
-            stroke="url(#progressGradient)"
-            strokeWidth="4"
-            strokeLinecap="round"
-            strokeDasharray={circumference}
-            strokeDashoffset={isVisible ? offset : circumference}
-            className="transition-all duration-[1500ms] ease-out"
-          />
-          {/* Gradient definition */}
-          <defs>
-            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#a855f7" />
-              <stop offset="100%" stopColor="#c084fc" />
-            </linearGradient>
-          </defs>
-        </svg>
-        {/* Percentage text in center */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-lg font-bold text-accent md:text-xl">
-            {percentage}%
-          </span>
-        </div>
-      </div>
-      {/* Skill name */}
-      <span className="text-xs font-medium text-muted md:text-sm">{name}</span>
-    </div>
-  );
-}
+/* Map icon name strings from data to actual Lucide components */
+const iconMap = {
+  BarChart3,
+  Sheet,
+  ClipboardList,
+  Calculator,
+  Megaphone,
+  Settings,
+  ListChecks,
+  ShieldCheck,
+  Users,
+  MessageSquare,
+  Globe,
+};
 
 /**
  * AboutMe — Dark themed About section.
  * Left: profile photo (black & white style)
  * Right: bio text with Download CV button
- * Bottom: circular progress bars for skills
+ * Bottom: categorized skill cards with icons
  */
 export default function AboutMe() {
   const [isVisible, setIsVisible] = useState(false);
@@ -83,7 +54,7 @@ export default function AboutMe() {
           observer.unobserve(el);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.15 }
     );
 
     observer.observe(el);
@@ -152,21 +123,56 @@ export default function AboutMe() {
         </div>
       </div>
 
-      {/* Bottom — Circular Progress Skills */}
-      <div
-        ref={skillsRef}
-        className="mt-16 rounded-2xl border border-border bg-card/50 p-8 md:p-12"
-      >
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
-          {aboutSkills.map((skill, index) => (
-            <CircularProgress
-              key={index}
-              percentage={skill.percentage}
-              name={skill.name}
-              isVisible={isVisible}
-            />
-          ))}
-        </div>
+      {/* Bottom — Skill Cards by Category */}
+      <div ref={skillsRef} className="mt-16 space-y-10">
+        {aboutSkills.map((group, groupIndex) => (
+          <div key={group.category}>
+            {/* Category label */}
+            <div className="mb-5 flex items-center gap-3">
+              <span className="text-xs font-bold tracking-widest text-accent uppercase">
+                {group.category}
+              </span>
+              <div className="h-px flex-1 bg-gradient-to-r from-accent/30 to-transparent" />
+            </div>
+
+            {/* Skill cards grid */}
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {group.skills.map((skill, skillIndex) => {
+                const IconComponent = iconMap[skill.icon] || BarChart3;
+                const delay = (groupIndex * 4 + skillIndex) * 0.08;
+
+                return (
+                  <div
+                    key={skill.name}
+                    className={`group rounded-xl border border-border bg-card p-5 transition-all duration-500 hover:border-accent/40 hover:bg-card-hover hover:shadow-lg hover:shadow-accent/5 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-6"
+                    }`}
+                    style={{
+                      transitionDelay: isVisible ? `${delay}s` : "0s",
+                    }}
+                  >
+                    {/* Icon */}
+                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent transition-all group-hover:bg-accent/20 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-accent/20">
+                      <IconComponent size={20} />
+                    </div>
+
+                    {/* Skill name */}
+                    <h4 className="mb-1.5 text-sm font-bold text-foreground">
+                      {skill.name}
+                    </h4>
+
+                    {/* Description */}
+                    <p className="text-xs leading-relaxed text-muted/80">
+                      {skill.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </div>
     </SectionWrapper>
   );

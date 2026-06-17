@@ -7,10 +7,10 @@
 // PERSONAL INFO — ข้อมูลส่วนตัวที่แสดงใน Hero Section
 // ============================================================
 export const personalInfo = {
-  greeting: "Hi I am",              // ← ข้อความทักทาย
-  name: "Your Name",                // ← ใส่ชื่อของคุณ
-  role: "Your Role / Title",        // ← ใส่ตำแหน่ง เช่น "UI/UX Designer", "Marketing Specialist"
-  resumeUrl: "/Resume - Orntharisa Kajornpongpaisan.pdf",         // ← วางไฟล์ resume ใน public/ folder
+  greeting: "Hi I am",
+  name: "Orntharisa Kajornpongpaisan",
+  role: "Data & Marketing Operations",
+  resumeUrl: "/Resume - Orntharisa Kajornpongpaisan.pdf",
   profileImage: "",                 // ← ใส่ path รูปโปรไฟล์ เช่น "/profile.jpg" (วางใน public/)
 };
 
@@ -18,20 +18,20 @@ export const personalInfo = {
 // HERO STATS — ตัวเลขที่แสดงด้านล่าง Hero
 // ============================================================
 export const heroStats = [
-  { value: "5+", label: "Experiences" },     // ← แก้ตัวเลข/label ตามต้องการ
-  { value: "20+", label: "Project done" },
-  { value: "80+", label: "Happy Clients" },
+  { value: "4+", label: "Years Experience" },
+  { value: "2", label: "Companies" },
+  { value: "10+", label: "Projects Delivered" },
 ];
 
 // ============================================================
 // SOCIAL LINKS — ลิงก์ social media (แสดงเป็น icon ใน Hero)
 // ============================================================
 export const socialLinks = {
-  email: "your.email@example.com",                // ← ใส่ email จริง
-  linkedin: "https://linkedin.com/in/your-profile", // ← ใส่ LinkedIn URL
-  github: "https://github.com/your-profile",        // ← ใส่ GitHub URL (ลบออกได้ถ้าไม่มี)
-  behance: "https://behance.net/your-profile",       // ← ใส่ Behance URL (ลบออกได้ถ้าไม่มี)
-  instagram: "https://instagram.com/your-profile",   // ← ใส่ Instagram URL (ลบออกได้ถ้าไม่มี)
+  email: "orntharisa.k@gmail.com",
+  linkedin: "https://linkedin.com/in/your-profile", // ← ใส่ LinkedIn URL จริง
+  github: "",                                        // ← ใส่ GitHub URL (ว่างไว้จะไม่แสดง)
+  behance: "",                                       // ← ใส่ Behance URL (ว่างไว้จะไม่แสดง)
+  instagram: "",                                     // ← ใส่ Instagram URL (ว่างไว้จะไม่แสดง)
   resumeUrl: "/Resume - Orntharisa Kajornpongpaisan.pdf",
 };
 
@@ -78,22 +78,43 @@ export const servicesSection = {
 // ABOUT ME — ข้อมูลเกี่ยวกับตัวคุณ (หน้า About)
 // ============================================================
 export const aboutMe = {
-  title: "About Me",                    // ← หัวข้อ section
-  subtitle: "Your specialty or tagline here",  // ← subtitle ใต้ชื่อ
-  bio: "Write your detailed biography here. Describe your background, experience, passion, and what drives you in your career. This section should give visitors a comprehensive understanding of who you are and what you bring to the table.\n\nYou can include multiple paragraphs to tell your story effectively. Share your journey, achievements, and professional philosophy.", // ← ใส่ประวัติ (แยก paragraph ด้วย \\n\\n)
+  title: "About Me",
+  subtitle: "Data Analysis & Marketing Operations Specialist",
+  bio: "I'm a data-driven marketing operations professional with 4+ years of experience at the intersection of analytics, coordination, and strategic planning. I specialize in turning operational data, customer feedback, and survey insights into clear, actionable recommendations that drive business growth.\n\nCurrently working as an Administration & Coordinator in the Marketing Division at GMO-Z.com NetDesign, I plan and coordinate marketing activities from concept to launch, analyze customer feedback to improve point exchange systems, and consolidate survey data to identify pain points. I bridge the gap between marketing and technical teams, translating insights into practical solutions.\n\nPreviously at Haupcar Co., Ltd., I managed vehicle operations, resolved system issues, and improved key management processes. I hold a Bachelor of Business Administration in Airline Business from Suan Sunandha Rajabhat University's International College.\n\nI'm seeking to transition into a specialized data and analytics role, contributing to insight-driven decision-making and operational efficiency.",
   profileImage: "",                     // ← ใส่รูป About เช่น "/about-photo.jpg" (วางใน public/)
 };
 
 // ============================================================
-// ABOUT SKILLS — ทักษะที่แสดงเป็น circular progress bars
-// percentage: 0-100
+// ABOUT SKILLS — ทักษะแบ่งตามกลุ่ม พร้อม icon
+// icon: ชื่อ Lucide icon (ดูรายชื่อได้ที่ lucide.dev/icons)
 // ============================================================
 export const aboutSkills = [
-  { name: "Skill 1", percentage: 90 },    // ← ใส่ชื่อ + เปอร์เซ็นต์
-  { name: "Skill 2", percentage: 85 },
-  { name: "Skill 3", percentage: 80 },
-  { name: "Skill 4", percentage: 75 },
-  { name: "Skill 5", percentage: 70 },
+  {
+    category: "Analytical",
+    skills: [
+      { name: "Data Analysis", icon: "BarChart3", description: "Operational data analysis and insight reporting" },
+      { name: "Excel & Reporting", icon: "Sheet", description: "Pivot, formulas, Power Query, structured reporting" },
+      { name: "Survey Analysis", icon: "ClipboardList", description: "Customer voice data collection and analysis" },
+      { name: "Cost Modeling", icon: "Calculator", description: "Cost-per-value modeling and pricing logic" },
+    ],
+  },
+  {
+    category: "Operations",
+    skills: [
+      { name: "Marketing Ops", icon: "Megaphone", description: "Campaign planning from concept to launch" },
+      { name: "Process Improvement", icon: "Settings", description: "Data-driven operational optimization" },
+      { name: "Project Tracking", icon: "ListChecks", description: "Task management with performance follow-up" },
+      { name: "Data Validation", icon: "ShieldCheck", description: "Accuracy checks and pre-implementation review" },
+    ],
+  },
+  {
+    category: "Communication",
+    skills: [
+      { name: "Cross-team Coordination", icon: "Users", description: "Bridging Marketing, Technical, and Operations" },
+      { name: "Stakeholder Communication", icon: "MessageSquare", description: "Clear and structured reporting to stakeholders" },
+      { name: "Bilingual (TH/EN)", icon: "Globe", description: "Native Thai and intermediate English" },
+    ],
+  },
 ];
 
 // ============================================================
