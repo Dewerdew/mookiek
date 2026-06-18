@@ -57,7 +57,7 @@ export default function Hero() {
                 href={socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-all hover:border-accent hover:text-accent hover:shadow-lg hover:shadow-accent/20"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted social-icon hover:border-accent hover:text-accent hover:shadow-lg hover:shadow-accent/20"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
@@ -68,7 +68,7 @@ export default function Hero() {
                 href={socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-all hover:border-accent hover:text-accent hover:shadow-lg hover:shadow-accent/20"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted social-icon hover:border-accent hover:text-accent hover:shadow-lg hover:shadow-accent/20"
                 aria-label="GitHub"
               >
                 <Github size={18} />
@@ -79,7 +79,7 @@ export default function Hero() {
                 href={socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-all hover:border-accent hover:text-accent hover:shadow-lg hover:shadow-accent/20"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted social-icon hover:border-accent hover:text-accent hover:shadow-lg hover:shadow-accent/20"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
@@ -91,14 +91,14 @@ export default function Hero() {
           <div className="hero-animate animate-fade-in-up mt-8 flex flex-col items-center gap-4 sm:flex-row md:items-start">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent-light hover:shadow-accent/40 hover:scale-105"
+              className="btn inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-light"
             >
               Hire Me
             </a>
             <a
               href={personalInfo.resumeUrl}
               download
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-7 py-3.5 text-sm font-semibold text-foreground transition-all hover:border-accent hover:text-accent hover:shadow-lg hover:shadow-accent/10"
+              className="btn inline-flex items-center justify-center gap-2 rounded-lg border border-border px-7 py-3.5 text-sm font-semibold text-foreground hover:border-accent hover:text-accent"
             >
               <Download size={16} />
               Download CV

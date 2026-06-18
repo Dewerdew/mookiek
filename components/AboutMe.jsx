@@ -88,7 +88,7 @@ export default function AboutMe() {
                 <img
                   src={aboutMe.profileImage}
                   alt="About me"
-                  className="relative z-10 h-full w-full object-contain object-bottom drop-shadow-[0_0_30px_rgba(168,85,247,0.1)] grayscale hover:grayscale-0 transition-all duration-500"
+                  className="img-grayscale relative z-10 h-full w-full object-contain object-bottom drop-shadow-[0_0_30px_rgba(168,85,247,0.1)] grayscale hover:grayscale-0"
                 />
                 {/* Bottom gradient fade */}
                 <div className="absolute bottom-0 left-0 right-0 z-20 h-12 bg-gradient-to-t from-background to-transparent" />
@@ -121,7 +121,7 @@ export default function AboutMe() {
           <a
             href={personalInfo.resumeUrl}
             download
-            className="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent-light hover:shadow-accent/40 hover:scale-105"
+            className="btn mt-4 inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-light"
           >
             <Download size={16} />
             Download CV
@@ -150,7 +150,7 @@ export default function AboutMe() {
                 return (
                   <div
                     key={skill.name}
-                    className={`group rounded-xl border border-border bg-card p-5 transition-all duration-500 hover:border-accent/40 hover:bg-card-hover hover:shadow-lg hover:shadow-accent/5 ${
+                    className={`skill-card group rounded-xl border border-border bg-card p-5 hover:border-accent/40 hover:bg-card-hover hover:shadow-lg hover:shadow-accent/5 ${
                       isVisible
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 translate-y-6"
@@ -160,7 +160,7 @@ export default function AboutMe() {
                     }}
                   >
                     {/* Icon */}
-                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent transition-all group-hover:bg-accent/20 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-accent/20">
+                    <div className="skill-icon mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent group-hover:bg-accent/20 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-accent/20">
                       <IconComponent size={20} />
                     </div>
 

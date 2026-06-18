@@ -26,11 +26,11 @@ export default function Services() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="card-glow group rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:border-accent/40 hover:bg-card-hover hover:shadow-xl hover:shadow-accent/5"
+            className="card-glow card-interactive group rounded-2xl border border-border bg-card p-8 hover:border-accent/40 hover:bg-card-hover"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             {/* Icon */}
-            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all group-hover:bg-accent/20 group-hover:shadow-lg group-hover:shadow-accent/20">
+            <div className="skill-icon mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent group-hover:bg-accent/20 group-hover:shadow-lg group-hover:shadow-accent/20">
               <Users size={28} />
             </div>
 

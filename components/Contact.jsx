@@ -22,7 +22,7 @@ export default function Contact() {
           {/* Email */}
           <a
             href={`mailto:${socialLinks.email}`}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground shadow-sm transition-all hover:border-accent hover:text-accent hover:shadow-lg hover:shadow-accent/10 sm:w-auto"
+            className="btn inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground shadow-sm hover:border-accent hover:text-accent sm:w-auto"
           >
             <Mail size={16} />
             Email Me
@@ -33,7 +33,7 @@ export default function Contact() {
             href={socialLinks.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground shadow-sm transition-all hover:border-accent hover:text-accent hover:shadow-lg hover:shadow-accent/10 sm:w-auto"
+            className="btn inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground shadow-sm hover:border-accent hover:text-accent sm:w-auto"
           >
             <Linkedin size={16} />
             LinkedIn
@@ -43,7 +43,7 @@ export default function Contact() {
           <a
             href={personalInfo.resumeUrl}
             download
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent-light hover:shadow-accent/40 hover:scale-105 sm:w-auto"
+            className="btn inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-light sm:w-auto"
           >
             <Download size={16} />
             Download Resume

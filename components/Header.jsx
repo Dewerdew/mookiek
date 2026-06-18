@@ -58,7 +58,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 nav-header ${
         scrolled
           ? "bg-[#0a0a0a]/95 backdrop-blur-md shadow-lg shadow-black/20"
           : "bg-transparent"
@@ -79,7 +79,7 @@ export default function Header() {
             <a
               key={link.label}
               href={link.href}
-              className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+              className={`nav-link rounded-lg px-4 py-2 text-sm font-medium ${
                 isActive(link.href)
                   ? "text-accent"
                   : "text-foreground/70 hover:text-foreground"
@@ -93,7 +93,7 @@ export default function Header() {
         {/* Hire Me CTA */}
         <a
           href="#contact"
-          className="hidden rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent-light hover:shadow-accent/40 md:inline-flex"
+          className="btn hidden rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-light md:inline-flex"
         >
           Hire Me
         </a>
@@ -116,7 +116,7 @@ export default function Header() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className={`rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
+              className={`nav-link rounded-lg px-4 py-3 text-sm font-medium ${
                 isActive(link.href)
                   ? "text-accent bg-accent-soft"
                   : "text-foreground/70 hover:text-foreground hover:bg-white/5"

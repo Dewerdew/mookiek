@@ -16,6 +16,8 @@
   --card-hover: #222222;
   --border: #2a2a2a;
   --border-light: #333333;
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration: 180ms;
 }
 
 @theme inline {
@@ -70,36 +72,119 @@ html {
 }
 
 /* ============================================================
-   Fade-in-up animation (used by SectionWrapper via Intersection Observer)
+   Section reveal — scroll-triggered fade + clip-path
    ============================================================ */
 .fade-section {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  clip-path: inset(8% 0 0 0);
+  transition:
+    opacity 0.6s var(--ease-premium),
+    clip-path 0.6s var(--ease-premium);
 }
 
 .fade-section.visible {
   opacity: 1;
-  transform: translateY(0);
+  clip-path: inset(0 0 0 0);
 }
 
 /* ============================================================
-   Staggered children animation
+   Staggered children entrance
    ============================================================ */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    clip-path: inset(20% 0 0 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
   }
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.5s var(--ease-premium) forwards;
   opacity: 0;
+}
+
+/* ============================================================
+   Button interactions — hover lift + active press
+   ============================================================ */
+.btn {
+  transition:
+    transform var(--duration) var(--ease-premium),
+    box-shadow var(--duration) var(--ease-premium),
+    background-color var(--duration) var(--ease-premium),
+    border-color var(--duration) var(--ease-premium),
+    color var(--duration) var(--ease-premium);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 12px rgba(168, 85, 247, 0.2),
+    0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 1px 4px rgba(168, 85, 247, 0.1),
+    0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================
+   Card interactions — hover lift 2px + shadow boost
+   ============================================================ */
+.card-interactive {
+  transition:
+    transform var(--duration) var(--ease-premium),
+    box-shadow var(--duration) var(--ease-premium),
+    border-color var(--duration) var(--ease-premium),
+    background-color var(--duration) var(--ease-premium);
+}
+
+.card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(168, 85, 247, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================================
+   Social icon hover
+   ============================================================ */
+.social-icon {
+  transition:
+    border-color var(--duration) var(--ease-premium),
+    color var(--duration) var(--ease-premium),
+    box-shadow var(--duration) var(--ease-premium),
+    transform var(--duration) var(--ease-premium);
+}
+
+.social-icon:hover {
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   Card glow effect (gradient border)
+   ============================================================ */
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, transparent, rgba(168, 85, 247, 0.3), transparent);
+  opacity: 0;
+  transition: opacity var(--duration) var(--ease-premium);
+  z-index: -1;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
 }
 
 /* ============================================================
@@ -115,53 +200,6 @@ html {
 }
 
 /* ============================================================
-   Glow pulse for accent elements
-   ============================================================ */
-@keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.2); }
-  50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.4); }
-}
-
-.animate-glow {
-  animation: glowPulse 3s ease-in-out infinite;
-}
-
-/* ============================================================
-   Circular progress animation
-   ============================================================ */
-@keyframes circleProgress {
-  from { stroke-dashoffset: 283; }
-}
-
-.circle-progress {
-  animation: circleProgress 1.5s ease-out forwards;
-  stroke-linecap: round;
-}
-
-/* ============================================================
-   Card hover glow effect
-   ============================================================ */
-.card-glow {
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.card-glow::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, transparent, rgba(168, 85, 247, 0.3), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.card-glow:hover::before {
-  opacity: 1;
-}
-
-/* ============================================================
    Text gradient
    ============================================================ */
 .text-gradient {
@@ -172,18 +210,74 @@ html {
 }
 
 /* ============================================================
-   Shimmer / typing effect for subtitle
+   Nav header transition
    ============================================================ */
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+.nav-header {
+  transition:
+    background-color 300ms var(--ease-premium),
+    box-shadow 300ms var(--ease-premium);
 }
 
-.shimmer-text {
-  background: linear-gradient(90deg, var(--foreground) 40%, var(--accent-light) 50%, var(--foreground) 60%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 4s linear infinite;
+/* ============================================================
+   Image grayscale transition (About Me photo)
+   ============================================================ */
+.img-grayscale {
+  transition: filter 500ms var(--ease-premium);
+}
+
+/* ============================================================
+   Skill card reveal (JS-driven opacity + translateY)
+   ============================================================ */
+.skill-card {
+  transition:
+    opacity 500ms var(--ease-premium),
+    transform 500ms var(--ease-premium),
+    border-color var(--duration) var(--ease-premium),
+    background-color var(--duration) var(--ease-premium),
+    box-shadow var(--duration) var(--ease-premium);
+}
+
+/* ============================================================
+   Skill icon hover
+   ============================================================ */
+.skill-icon {
+  transition:
+    background-color var(--duration) var(--ease-premium),
+    transform var(--duration) var(--ease-premium),
+    box-shadow var(--duration) var(--ease-premium);
+}
+
+/* ============================================================
+   Nav link transition
+   ============================================================ */
+.nav-link {
+  transition: color var(--duration) var(--ease-premium);
+}
+
+/* ============================================================
+   Accessibility: prefers-reduced-motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fade-section {
+    opacity: 1;
+    clip-path: none;
+  }
+
+  .animate-fade-in-up {
+    opacity: 1;
+    animation: none;
+  }
+
+  .animate-float {
+    animation: none;
+  }
 }
