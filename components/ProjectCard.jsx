@@ -1,8 +1,9 @@
 /**
  * ProjectCard — Dark themed case study card.
- * Shows: title, role, tags, key metrics, and the 4-part story
- * (Problem → Analysis → Recommendation → Outcome).
+ * Shows: title, role, tags, key metrics (with counting animation),
+ * and the 4-part story (Problem → Analysis → Recommendation → Outcome).
  */
+import AnimatedMetric from "./AnimatedMetric";
 export default function ProjectCard({ project, index }) {
   const storySections = [
     { key: "problem", label: "Problem", color: "text-red-400" },
@@ -40,7 +41,10 @@ export default function ProjectCard({ project, index }) {
       <div className="mb-8 grid grid-cols-3 gap-4 rounded-xl border border-border bg-background/50 p-5">
         {project.metrics.map((m, i) => (
           <div key={i} className="text-center">
-            <div className="text-xl font-bold text-accent md:text-2xl">{m.value}</div>
+            <AnimatedMetric
+              value={m.value}
+              className="text-xl font-bold text-accent tabular-nums md:text-2xl"
+            />
             <div className="mt-1 text-xs text-muted">{m.label}</div>
           </div>
         ))}

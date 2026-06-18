@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { Download, Github, Instagram, Linkedin } from "lucide-react";
 import { personalInfo, heroStats, socialLinks } from "@/data/portfolio";
+import AnimatedMetric from "./AnimatedMetric";
 
 /**
  * Hero — Dark themed 2-column hero section.
@@ -109,9 +110,10 @@ export default function Hero() {
           <div className="hero-animate animate-fade-in-up mt-12 flex items-center justify-center gap-8 md:justify-start md:gap-12">
             {heroStats.map((stat, i) => (
               <div key={i} className="text-center md:text-left">
-                <div className="text-2xl font-bold text-accent md:text-3xl">
-                  {stat.value}
-                </div>
+                <AnimatedMetric
+                  value={stat.value}
+                  className="text-2xl font-bold text-accent tabular-nums md:text-3xl"
+                />
                 <div className="mt-1 text-xs text-muted">{stat.label}</div>
               </div>
             ))}
