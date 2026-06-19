@@ -122,29 +122,45 @@ export default function Hero() {
 
         {/* Right column — Profile image */}
         <div className="hero-animate animate-fade-in-up flex-shrink-0">
-          <div className="animate-float relative">
-            {/* Glow behind the image */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-3/4 w-3/4 rounded-full bg-accent/20 blur-3xl" />
+          <div className="relative">
+            {/* Glow behind — soft, no visible edges */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-1/2 w-1/2 rounded-full bg-accent/25 blur-[100px]" />
             
-            {/* Profile image container — transparent PNG friendly */}
-            <div className="relative h-72 w-72 md:h-[22rem] md:w-[22rem] lg:h-[26rem] lg:w-[26rem]">
-              {personalInfo.profileImage ? (
-                <img
-                  src={personalInfo.profileImage}
-                  alt={personalInfo.name}
-                  className="relative z-10 h-full w-full object-contain object-bottom drop-shadow-[0_0_40px_rgba(168,85,247,0.15)]"
-                />
-              ) : (
-                /* Placeholder when no image is set */
-                <div className="flex h-full w-full items-center justify-center rounded-2xl border border-border bg-card/50">
-                  <div className="text-center">
-                    <div className="text-5xl text-accent/40">👤</div>
-                    <p className="mt-2 text-xs text-muted/50">Add your photo</p>
+            {/* Circular frame */}
+            <div className="relative h-80 w-80 md:h-[26rem] md:w-[26rem] lg:h-[30rem] lg:w-[30rem]">
+              {/* Outer ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-white/10" />
+              {/* Inner accent ring */}
+              <div className="absolute inset-3 rounded-full border border-accent/25" />
+
+              {/* Image area — clipped to circle */}
+              <div className="absolute inset-4 overflow-hidden rounded-full bg-background">
+                {personalInfo.profileImage ? (
+                  <img
+                    src={personalInfo.profileImage}
+                    alt={personalInfo.name}
+                    className="h-full w-full object-cover object-top"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-card to-background">
+                    <div className="text-center">
+                      <div className="text-5xl text-accent/40">👤</div>
+                      <p className="mt-2 text-xs text-muted/50">Add your photo</p>
+                    </div>
                   </div>
-                </div>
-              )}
-              {/* Bottom gradient fade */}
-              <div className="absolute bottom-0 left-0 right-0 z-20 h-16 bg-gradient-to-t from-background to-transparent" />
+                )}
+              </div>
+
+              {/* Decorative accent arc — slow spin for subtle motion */}
+              <svg className="absolute inset-0 h-full w-full animate-[spin_10s_linear_infinite]" viewBox="0 0 100 100" fill="none">
+                <circle cx="50" cy="50" r="48" stroke="url(#heroRingGrad)" strokeWidth="1.5" strokeDasharray="80 220" />
+                <defs>
+                  <linearGradient id="heroRingGrad" x1="0" y1="0" x2="100" y2="100">
+                    <stop offset="0%" stopColor="#a855f7" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
           </div>
         </div>
