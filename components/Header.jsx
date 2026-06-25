@@ -58,11 +58,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 nav-header ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 nav-header ${scrolled
           ? "bg-[#0a0a0a]/95 backdrop-blur-md shadow-lg shadow-black/20"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         {/* Brand */}
@@ -70,7 +69,7 @@ export default function Header() {
           href="#hero"
           className="font-heading text-lg font-bold tracking-wider text-foreground"
         >
-          <span className="text-accent">LOGO</span>
+          <span className="text-accent">MOOK</span>
         </a>
 
         {/* Desktop nav */}
@@ -79,11 +78,10 @@ export default function Header() {
             <a
               key={link.label}
               href={link.href}
-              className={`nav-link rounded-lg px-4 py-2 text-sm font-medium ${
-                isActive(link.href)
+              className={`nav-link rounded-lg px-4 py-2 text-sm font-medium ${isActive(link.href)
                   ? "text-accent"
                   : "text-foreground/70 hover:text-foreground"
-              }`}
+                }`}
             >
               {link.label}
             </a>
@@ -116,11 +114,10 @@ export default function Header() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className={`nav-link rounded-lg px-4 py-3 text-sm font-medium ${
-                isActive(link.href)
+              className={`nav-link rounded-lg px-4 py-3 text-sm font-medium ${isActive(link.href)
                   ? "text-accent bg-accent-soft"
                   : "text-foreground/70 hover:text-foreground hover:bg-white/5"
-              }`}
+                }`}
             >
               {link.label}
             </a>
