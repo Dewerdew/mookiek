@@ -41,28 +41,28 @@ export const socialLinks = {
 // ============================================================
 export const services = [
   {
-    title: "Service Title 1",                    // ← ใส่ชื่อบริการ
-    description: "Brief description of what this service includes and the value it provides to clients.", // ← ใส่รายละเอียด
+    title: "Data Analysis",                    // ← ใส่ชื่อบริการ
+    description: "Analyze data to uncover meaningful business insights.", // ← ใส่รายละเอียด
   },
   {
-    title: "Service Title 2",
-    description: "Brief description of what this service includes and the value it provides to clients.",
+    title: "Customer Insights",
+    description: "Understand customer needs through data and feedback.",
   },
   {
-    title: "Service Title 3",
-    description: "Brief description of what this service includes and the value it provides to clients.",
+    title: "Market Research",
+    description: "Support research projects with structured analysis and reporting.",
   },
   {
-    title: "Service Title 4",
-    description: "Brief description of what this service includes and the value it provides to clients.",
+    title: "Data Quality Management",
+    description: "Maintain accurate and reliable data for better outcomes.",
   },
   {
-    title: "Service Title 5",
-    description: "Brief description of what this service includes and the value it provides to clients.",
+    title: "Decision Support",
+    description: "Deliver insights that support effective business decisions.",
   },
   {
-    title: "Service Title 6",
-    description: "Brief description of what this service includes and the value it provides to clients.",
+    title: "Project Coordination",
+    description: "Coordinate cross-functional teams to drive project success.",
   },
 ];
 
@@ -70,8 +70,8 @@ export const services = [
 // SERVICES SECTION TEXT
 // ============================================================
 export const servicesSection = {
-  title: "Services",                    // ← หัวข้อ section
-  subtitle: "Brief description of the services you offer and your approach to delivering value.", // ← คำอธิบาย section
+  title: "Areas of Expertise",                    // ← หัวข้อ section
+  subtitle: "Turning customer feedback and operational data into meaningful insights that support better business decisions.", // ← คำอธิบาย section
 };
 
 // ============================================================
