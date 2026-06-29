@@ -18,8 +18,8 @@ export const personalInfo = {
 // HERO STATS — ตัวเลขที่แสดงด้านล่าง Hero
 // ============================================================
 export const heroStats = [
-  { value: "4+", label: "Years Experience" },
-  { value: "2", label: "Companies" },
+  { value: "6+", label: "Years Experience" },
+  { value: "3", label: "Companies" },
   { value: "10+", label: "Projects Delivered" },
 ];
 
