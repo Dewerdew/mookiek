@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { personalInfo } from "@/data/portfolio";
+import { personalInfo, socialLinks } from "@/data/portfolio";
 
 /**
  * Header — Dark themed sticky navigation bar.
@@ -90,7 +90,7 @@ export default function Header() {
 
         {/* Hire Me CTA */}
         <a
-          href="#contact"
+          href={`mailto:${socialLinks.email}?subject=Interested%20in%20working%20together`}
           className="btn hidden rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-light md:inline-flex"
         >
           Hire Me
@@ -123,7 +123,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#contact"
+            href={`mailto:${socialLinks.email}?subject=Interested%20in%20working%20together`}
             onClick={() => setMenuOpen(false)}
             className="mt-2 rounded-lg bg-accent px-5 py-3 text-center text-sm font-semibold text-white"
           >

@@ -91,7 +91,7 @@ export default function Hero() {
           {/* CTAs */}
           <div className="hero-animate animate-fade-in-up mt-8 flex flex-col items-center gap-4 sm:flex-row md:items-start">
             <a
-              href="#contact"
+              href={`mailto:${socialLinks.email}?subject=Interested%20in%20working%20together`}
               className="btn inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-light"
             >
               Hire Me

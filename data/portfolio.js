@@ -28,7 +28,7 @@ export const heroStats = [
 // ============================================================
 export const socialLinks = {
   email: "orntharisa.k@gmail.com",
-  linkedin: "https://linkedin.com/in/your-profile", // ← ใส่ LinkedIn URL จริง
+  linkedin: "https://www.linkedin.com/in/orntharisa-kajornpongpaisan-952a091a9/", // ← ใส่ LinkedIn URL จริง
   github: "",                                        // ← ใส่ GitHub URL (ว่างไว้จะไม่แสดง)
   behance: "",                                       // ← ใส่ Behance URL (ว่างไว้จะไม่แสดง)
   instagram: "",                                     // ← ใส่ Instagram URL (ว่างไว้จะไม่แสดง)
