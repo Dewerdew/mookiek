@@ -93,9 +93,9 @@ export const aboutSkills = [
     category: "Analytical",
     skills: [
       { name: "Data Analysis", icon: "BarChart3", description: "Operational data analysis and insight reporting" },
-      { name: "Excel & Reporting", icon: "Sheet", description: "Pivot, formulas, Power Query, structured reporting" },
-      { name: "Survey Analysis", icon: "ClipboardList", description: "Customer voice data collection and analysis" },
-      { name: "Cost Modeling", icon: "Calculator", description: "Cost-per-value modeling and pricing logic" },
+      { name: "Excel & Reporting", icon: "Sheet", description: "PivotTables, Formulas, and structured reporting" },
+      { name: "Survey Analysis", icon: "ClipboardList", description: "Survey data cleaning, tabulation, and feedback analysis" },
+      { name: "Cost & Pricing Analysis", icon: "Calculator", description: "Fee comparison and cost-per-value analysis" },
     ],
   },
   {
